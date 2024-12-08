@@ -140,10 +140,6 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .main-content {
-        padding: 20px 10px;
-      }
-
       header .container {
         flex-direction: column;
         align-items: flex-start;
@@ -152,10 +148,51 @@
       nav ul {
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
+        padding-left: 0;
       }
 
       nav ul li {
         margin: 10px 0;
+        width: 100%;
+      }
+
+      .main-content {
+        padding: 20px 10px;
+      }
+
+      .assignments h2 {
+        font-size: 1.5rem;
+      }
+
+      .assignments .assignment h3 {
+        font-size: 1.3rem;
+      }
+
+      .assignments .assignment p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav ul li a {
+        font-size: 0.9rem;
+      }
+
+      .assignments h2 {
+        font-size: 1.2rem;
+      }
+
+      .assignments .assignment h3 {
+        font-size: 1.1rem;
+      }
+
+      .assignments .assignment p {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -168,8 +205,8 @@
         <ul>
           <li><a href="Untitled-1.html">Home</a></li>
           <li><a href="documents.html">Documents</a></li>
-          <li><a href="reflection.html">Reflection</a></li>
-          <li><a href="assignments.html">Assignments</a></li>
+          <li><a href="Reflection.html">Reflection</a></li>
+          <li><a href="Assignments.html">Assignments</a></li>
         </ul>
       </nav>
     </div>
@@ -179,14 +216,12 @@
     <div class="assignments">
       <h2>Assignments and Projects</h2>
 
-      <!-- Learning Style and Strategy - Smaller and concise -->
       <div class="assignment">
         <h3>Learning Style and Strategy</h3>
         <p>My learning style involves **observing** others and **writing** to reinforce my learning. I learn best by watching experts, then summarizing the content through writing. These strategies help me internalize information efficiently.</p>
         <a href="learning-style.html">Read More</a>
       </div>
 
-      <!-- Additional Assignments and Links -->
       <div class="assignment">
         <h3>Comic Strip: Good vs Poor Communication</h3>
         <p>Created using <a href="https://www.pixton.com" target="_blank">Pixton</a>, this comic strip contrasts effective communication with poor communication at the workplace.</p>
@@ -202,7 +237,7 @@
       <div class="assignment">
         <h3>Web Development Project: Personal Portfolio</h3>
         <p>This project involved creating a personal portfolio website using HTML, CSS, and JavaScript. The website showcases my academic journey, skills, and projects.</p>
-        <a href="https://github.com/yourusername/portfolio" target="_blank">View Project on GitHub</a>
+        <a href="https://github.com/abdalrahmanhajjo/AbdalrahmanHajjo-Portfolio" target="_blank">View Project on GitHub</a>
       </div>
     </div>
   </div>

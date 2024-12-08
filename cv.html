@@ -40,10 +40,11 @@
       display: flex;
       justify-content: center;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 10px;
     }
 
     nav ul li a {
@@ -100,102 +101,156 @@
       color: white;
     }
 
+    /* Responsive Styles */
     @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .container {
+        padding: 0 15px;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      section h3 {
+        font-size: 1.1rem;
+      }
+
+      nav ul li {
+        margin: 0 8px;
+      }
+
+      ul li {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
       header h1 {
         font-size: 1.5rem;
       }
 
       header p {
+        font-size: 0.8rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 5px 0;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      ul li {
         font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-          <h1>My Portfolio</h1>
-          <nav>
-            <ul>
-              <li><a href="Untitled-1.html">Home</a></li>
-              <li><a href="documents.html">Documents</a></li>
-              <li><a href="reflection.html">Reflection</a></li>
-              <li><a href="assignments.html">Assignments</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+  <header>
+    <div class="container">
+      <h1>My Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="Untitled-1.html">Home</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="Reflection.html">Reflection</a></li>
+          <li><a href="Assignments.html">Assignments</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
-
-<h1>CV Section</h1>
+  <div class="container">
+    <h1>CV Section</h1>
 
     <section>
-        <h2>Abdalrahman Ahmad Hajjo</h2>
-        <p>Lebanon, North, Tripoli | abedhajjo57@gmail.com | 76536462</p>
-         
+      <h2>Abdalrahman Ahmad Hajjo</h2>
+      <p>Lebanon, North, Tripoli | abedhajjo57@gmail.com | 76536462</p>
     </section>
 
-  <!-- Professional Summary -->
-  <section>
-    <h2>Professional Summary</h2>
-    <p>Motivated Computer Science undergraduate with a solid foundation in programming and software development. Proficient in Java, C++, JavaScript, HTML, CSS, and SQL, with hands-on experience in web and app development. Strong problem-solving skills, a passion for innovation, and a commitment to contributing to dynamic, team-oriented environments.</p>
-  </section>
+    <!-- Professional Summary -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p>Motivated Computer Science undergraduate with a solid foundation in programming and software development. Proficient in Java, C++, JavaScript, HTML, CSS, and SQL, with hands-on experience in web and app development. Strong problem-solving skills, a passion for innovation, and a commitment to contributing to dynamic, team-oriented environments.</p>
+    </section>
 
-  <!-- Technical Skills -->
-  <section>
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Java, C++, JavaScript, HTML, CSS</li>
-      <li><strong>Databases:</strong> MySQL, SQL</li>
-      <li><strong>Tools:</strong> Google Workspace, Microsoft Office</li>
-      <li><strong>Web & App Development:</strong> Front-end and back-end expertise</li>
-    </ul>
-  </section>
+    <!-- Technical Skills -->
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> Java, C++, JavaScript, HTML, CSS</li>
+        <li><strong>Databases:</strong> MySQL, SQL</li>
+        <li><strong>Tools:</strong> Google Workspace, Microsoft Office</li>
+        <li><strong>Web & App Development:</strong> Front-end and back-end expertise</li>
+      </ul>
+    </section>
 
-  <!-- Professional Experience -->
-  <section>
-    <h2>Professional Experience</h2>
-    <h3>Web Development Assistant</h3>
-    <p><strong>Al Mobader – Baddawi, Lebanon | June 2022 – October 2022</strong></p>
-    <ul>
-      <li>Delivered web development training to students aged 15-20.</li>
-      <li>Led the development of multiple student-driven website projects.</li>
-    </ul>
+    <!-- Professional Experience -->
+    <section>
+      <h2>Professional Experience</h2>
+      <h3>Web Development Assistant</h3>
+      <p><strong>Al Mobader – Baddawi, Lebanon | June 2022 – October 2022</strong></p>
+      <ul>
+        <li>Delivered web development training to students aged 15-20.</li>
+        <li>Led the development of multiple student-driven website projects.</li>
+      </ul>
 
-    <h3>App Development Assistant</h3>
-    <p><strong>Al Mobader – Baddawi, Lebanon | February 2022 – June 2022</strong></p>
-    <ul>
-      <li>Supported teaching app development based on the MIT curriculum.</li>
-      <li>Assisted in the design and creation of functional app prototypes.</li>
-    </ul>
-  </section>
+      <h3>App Development Assistant</h3>
+      <p><strong>Al Mobader – Baddawi, Lebanon | February 2022 – June 2022</strong></p>
+      <ul>
+        <li>Supported teaching app development based on the MIT curriculum.</li>
+        <li>Assisted in the design and creation of functional app prototypes.</li>
+      </ul>
+    </section>
 
-  <!-- Education -->
-  <section>
-    <h2>Education</h2>
-    <p><strong>Bachelor's Degree in Computer Science</strong></p>
-    <p>Beirut Arab University – Beirut, Lebanon | <strong>Expected Graduation: 2026</strong></p>
-  </section>
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <p><strong>Bachelor's Degree in Computer Science</strong></p>
+      <p>Beirut Arab University – Beirut, Lebanon | <strong>Expected Graduation: 2026</strong></p>
+    </section>
 
-  <!-- Projects -->
-  <section>
-    <h2>Projects</h2>
-    <h3>Flask E-commerce Website</h3>
-    <ul>
-      <li>Designed and developed a platform for buying and selling new and second-hand items within local communities.</li>
-      <li>Built the complete solution independently using Flask.</li>
-    </ul>
-  </section>
+    <!-- Projects -->
+    <section>
+      <h2>Projects</h2>
+      <h3>Flask E-commerce Website</h3>
+      <ul>
+        <li>Designed and developed a platform for buying and selling new and second-hand items within local communities.</li>
+        <li>Built the complete solution independently using Flask.</li>
+      </ul>
+    </section>
 
-  <!-- Languages -->
-  <section>
-    <h2>Languages</h2>
-    <ul>
-      <li><strong>Arabic:</strong> Native</li>
-      <li><strong>English:</strong> Proficient</li>
-    </ul>
-  </section>
+    <!-- Languages -->
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li><strong>Arabic:</strong> Native</li>
+        <li><strong>English:</strong> Proficient</li>
+      </ul>
+    </section>
+    <section>
+        <h1>Download</h1>
+        <a href="https://baudom-my.sharepoint.com/:w:/g/personal/aah276_student_bau_edu_lb/ERcEi8G4aERIgOrV9udYFcsBTU4IWMaKgfrBFk7jeo3-gA?e=Ue6d1C">Click</a>
+    </section>
 </div>
 
 <footer>

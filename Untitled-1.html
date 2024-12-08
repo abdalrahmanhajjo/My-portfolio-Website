@@ -31,7 +31,7 @@
     header {
       background: #6c63ff;
       color: white;
-      padding: 20px 0;
+      padding: 10px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -40,37 +40,34 @@
 
     header .container {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       max-width: 1200px;
       margin: auto;
-      padding: 0 20px;
     }
 
     header h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 600;
+      margin: 0;
     }
 
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 10px;
     }
 
     nav ul li a {
-      text-decoration: none;
       color: white;
       font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      color: #ff6b6b;
     }
 
     /* Hero Section */
@@ -78,25 +75,25 @@
       text-align: center;
       background: linear-gradient(to right, #6c63ff, #f79d00);
       color: white;
-      padding: 100px 20px;
+      padding: 80px 20px;
     }
 
     .hero h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 10px 0;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      margin: 20px 0;
+      font-size: 1rem;
+      margin: 15px 0;
     }
 
     .hero button {
       background: #ff6b6b;
       color: white;
       border: none;
-      padding: 12px 25px;
-      font-size: 1.1rem;
+      padding: 10px 20px;
+      font-size: 1rem;
       cursor: pointer;
       border-radius: 8px;
       transition: background 0.3s ease, transform 0.2s ease;
@@ -107,49 +104,14 @@
       transform: scale(1.05);
     }
 
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    section h2 {
-      margin-bottom: 20px;
-      color: #6c63ff;
-      font-size: 2rem;
-    }
-
-    .documents, .reflection, .assignments {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-    }
-
-    .documents a, .assignments a {
-      color: #6c63ff;
-      display: block;
-      margin: 10px 0;
+    .hero button a {
+      color: white;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .documents a:hover, .assignments a:hover {
-      color: #ff6b6b;
-    }
-
-    .reflection p, .documents ul, .assignments p {
-      text-align: left;
-      margin-bottom: 15px;
     }
 
     /* Profile Section */
     .profile-container {
-      max-width: 900px;
+      max-width: 90%;
       margin: 20px auto;
       background: #fff;
       border-radius: 10px;
@@ -159,14 +121,13 @@
 
     .profile {
       text-align: center;
-      padding: 20px;
     }
 
     .profile img {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 4px solid #ddd;
+      border: 3px solid #ddd;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -177,29 +138,24 @@
 
     .profile h1 {
       margin: 10px 0;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: #333;
     }
 
     .profile p {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #555;
       margin: 5px 0;
     }
 
-    .profile .contact-info {
+    .contact-info {
       margin: 10px 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #666;
-    }
-
-    .profile .contact-info span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
     }
 
     .section-title {
@@ -207,15 +163,15 @@
       padding: 10px;
       text-align: center;
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin: 20px 0 10px;
     }
 
     .section-content {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.5;
       color: #333;
-      padding: 10px 20px;
+      padding: 10px;
       background: #f9f9f9;
       border-radius: 5px;
     }
@@ -224,8 +180,57 @@
     footer {
       background: #333;
       color: white;
-      padding: 20px 0;
+      padding: 10px 0;
       text-align: center;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .hero button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+
+      .contact-info span {
+        font-size: 0.8rem;
+      }
+
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.8rem;
+      }
+
+      .profile img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .profile h1 {
+        font-size: 1.2rem;
+      }
     }
   </style>
   <script>

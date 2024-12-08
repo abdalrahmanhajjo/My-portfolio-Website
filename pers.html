@@ -31,7 +31,7 @@
     header {
       background: #6c63ff;
       color: white;
-      padding: 20px 0;
+      padding: 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -100,7 +100,8 @@
       margin-bottom: 10px;
     }
 
-    .document-section p {
+    .document-section p,
+    .document-section ul {
       color: #555;
       font-size: 1.1rem;
       line-height: 1.7;
@@ -112,6 +113,67 @@
       text-align: center;
       padding: 20px 0;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .document-section {
+        padding: 15px;
+      }
+
+      .document-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .document-section p,
+      .document-section ul {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 5px 0;
+      }
+
+      .main-content {
+        padding: 20px 10px;
+      }
+
+      .document-section {
+        padding: 10px;
+      }
+
+      .document-section h2 {
+        font-size: 1.3rem;
+      }
+
+      .document-section p,
+      .document-section ul {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -122,100 +184,44 @@
         <ul>
           <li><a href="Untitled-1.html">Home</a></li>
           <li><a href="documents.html">Documents</a></li>
-          <li><a href="reflection.html">Reflection</a></li>
-          <li><a href="assignments.html">Assignments</a></li>
+          <li><a href="Reflection.html">Reflection</a></li>
+          <li><a href="Assignments.html">Assignments</a></li>
         </ul>
       </nav>
     </div>
-  </header><div class="main-content">
+  </header>
+
+  <div class="main-content">
     <h1>My Professional Development Plan</h1>
     <p>Today's Date: October 2026</p>
     
-    <!-- Long Term Goal -->
     <div class="document-section">
       <h2>Long Term Goal</h2>
       <p>Work as a front-end developer at a tech company specializing in user-focused web applications.</p>
       <p><strong>Target Achievement: October 2027</strong></p>
     </div>
-    
-    <!-- Short Term Goals -->
+
     <div class="document-section">
       <h2>Short Term Goal 1</h2>
       <p>Develop expertise in front-end technologies such as HTML, CSS, JavaScript, and frameworks like React.</p>
       <ul>
-        <li>
-          Enroll in advanced online courses (React, TypeScript, responsive design).
-          <br><strong>Timeline: Complete by January 2027</strong>
-        </li>
-        <li>
-          Create three web projects showcasing interactive UI/UX designs.
-          <br><strong>Timeline: Complete by February 2027</strong>
-        </li>
-        <li>
-          Contribute to open-source projects to improve skills.
-          <br><strong>Timeline: Complete by March 2027</strong>
-        </li>
+        <li>Enroll in advanced online courses (React, TypeScript, responsive design).</li>
+        <li>Create three web projects showcasing interactive UI/UX designs.</li>
+        <li>Contribute to open-source projects to improve skills.</li>
       </ul>
     </div>
-  
+
     <div class="document-section">
       <h2>Short Term Goal 2</h2>
       <p>Gain experience through internships or volunteer opportunities.</p>
       <ul>
-        <li>
-          Apply for front-end internships at tech companies.
-          <br><strong>Timeline: Start applications by March 2027 and secure an internship by May 2027</strong>
-        </li>
-        <li>
-          Network with local businesses or non-profits for freelance projects.
-          <br><strong>Timeline: Start by April 2027</strong>
-        </li>
-        <li>
-          Seek mentor feedback on completed projects.
-          <br><strong>Timeline: Complete by June 2027</strong>
-        </li>
-      </ul>
-    </div>
-  
-    <div class="document-section">
-      <h2>Short Term Goal 3</h2>
-      <p>Strengthen problem-solving and coding interview skills.</p>
-      <ul>
-        <li>
-          Practice algorithmic problems on platforms like LeetCode or HackerRank.
-          <br><strong>Timeline: Start by December 2026 and continue through May 2027</strong>
-        </li>
-        <li>
-          Participate in mock interviews and coding challenges.
-          <br><strong>Timeline: Begin by April 2027 and complete by June 2027</strong>
-        </li>
-        <li>
-          Review key computer science concepts (data structures, algorithms).
-          <br><strong>Timeline: Complete by July 2027</strong>
-        </li>
-      </ul>
-    </div>
-  
-    <div class="document-section">
-      <h2>Short Term Goal 4</h2>
-      <p>Build a professional online presence to showcase skills and attract opportunities.</p>
-      <ul>
-        <li>
-          Create and maintain an updated LinkedIn profile.
-          <br><strong>Timeline: Complete by December 2026</strong>
-        </li>
-        <li>
-          Develop a personal portfolio website.
-          <br><strong>Timeline: Complete by February 2027</strong>
-        </li>
-        <li>
-          Share blogs or technical content about front-end development.
-          <br><strong>Timeline: Complete by April 2027</strong>
-        </li>
+        <li>Apply for front-end internships at tech companies.</li>
+        <li>Network with local businesses or non-profits for freelance projects.</li>
+        <li>Seek mentor feedback on completed projects.</li>
       </ul>
     </div>
   </div>
-  
+
   <footer>
     <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved.</p>
   </footer>

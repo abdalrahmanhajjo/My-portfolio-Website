@@ -123,9 +123,10 @@
       margin-bottom: 10px;
     }
 
-    .panel p {
+    .panel p, .panel ul {
       font-size: 1.1rem;
       color: #555;
+      text-align: left;
     }
 
     /* Footer */
@@ -134,6 +135,58 @@
       color: white;
       padding: 20px 0;
       text-align: center;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .comic-panels {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .panel {
+        width: 100%;
+      }
+
+      .comic-strip h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .comic-strip img {
+        max-width: 100%;
+      }
+
+      .panel h3 {
+        font-size: 1.2rem;
+      }
+
+      .panel p, .panel ul {
+        font-size: 1rem;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -145,8 +198,8 @@
         <ul>
           <li><a href="Untitled-1.html">Home</a></li>
           <li><a href="documents.html">Documents</a></li>
-          <li><a href="reflection.html">Reflection</a></li>
-          <li><a href="assignments.html">Assignments</a></li>
+          <li><a href="Reflection.html">Reflection</a></li>
+          <li><a href="Assignments.html">Assignments</a></li>
         </ul>
       </nav>
     </div>
@@ -156,8 +209,7 @@
     <div class="comic-strip">
       <h2>Communication at the Workplace: A Comic Strip</h2>
 
-      <!-- Image that describes comic strips -->
-      <a href="https://ibb.co/K6wnxnY"><img src="https://i.ibb.co/5TFZhZd/IMG-6276.jpg" alt="IMG-6276" border="0"></a>
+      <a href="https://ibb.co/K6wnxnY"><img src="https://i.ibb.co/5TFZhZd/IMG-6276.jpg" alt="Comic Strip" border="0"></a>
 
       <div class="comic-panels">
         <!-- Left Panel: Good Communication -->
@@ -170,7 +222,6 @@
             <li><strong>Waiter 1:</strong> "Got it! I’ll handle tables 5 to 8."</li>
             <li><strong>Waiter 2:</strong> "I’ll take care of the drinks. Let me know if you need help!"</li>
           </ul>
-          <p><strong>Visuals:</strong> The characters are smiling and appear motivated.</p>
         </div>
 
         <!-- Right Panel: Poor Communication -->
@@ -183,7 +234,6 @@
             <li><strong>Waiter 2:</strong> "I didn’t know table 4 needed drinks! No one told me."</li>
             <li><strong>Manager:</strong> "Why aren’t the orders out yet? You’re too slow!"</li>
           </ul>
-          <p><strong>Visuals:</strong> Characters appear frustrated, with furrowed brows and frowns. </p>
         </div>
       </div>
     </div>
