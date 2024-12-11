@@ -31,46 +31,125 @@
     header {
       background: #6c63ff;
       color: white;
-      padding: 20px;
+      padding: 10px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(108, 99, 255, 0.9);
     }
 
     header h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 600;
     }
 
-    nav ul {
-      list-style: none;
+    nav {
+      position: relative;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      z-index: 1500;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    .nav-menu {
       display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
       margin: 0;
       padding: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 10px;
     }
 
     nav ul li a {
-      text-decoration: none;
       color: white;
       font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: #ff6b6b;
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* Responsive Navigation */
+    .hamburger {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .nav-menu {
+      display: flex;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 200px;
+        background: #6c63ff;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      nav ul li a {
+        width: 100%;
+      }
     }
 
     /* Main Content */
@@ -175,55 +254,97 @@
       }
     }
   </style>
+<script>
+  window.onscroll = function () {
+    const header = document.querySelector('header');
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('active');
+  }
+</script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Abdalrahman Ahmad Hajjo</h1>
-      <nav>
-        <ul>
-          <li><a href="Untitled-1.html">Home</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="Reflection.html">Reflection</a></li>
-          <li><a href="Assignments.html">Assignments</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <h1>My Portfolio</h1>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="Untitled-1.html">Home</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="Reflection.html">Reflection</a></li>
+      <li><a href="Assignments.html">Assignments</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <div class="main-content">
-    <h1>My Professional Development Plan</h1>
-    <p>Today's Date: October 2026</p>
-    
-    <div class="document-section">
-      <h2>Long Term Goal</h2>
-      <p>Work as a front-end developer at a tech company specializing in user-focused web applications.</p>
-      <p><strong>Target Achievement: October 2027</strong></p>
-    </div>
-
-    <div class="document-section">
-      <h2>Short Term Goal 1</h2>
-      <p>Develop expertise in front-end technologies such as HTML, CSS, JavaScript, and frameworks like React.</p>
-      <ul>
-        <li>Enroll in advanced online courses (React, TypeScript, responsive design).</li>
-        <li>Create three web projects showcasing interactive UI/UX designs.</li>
-        <li>Contribute to open-source projects to improve skills.</li>
-      </ul>
-    </div>
-
-    <div class="document-section">
-      <h2>Short Term Goal 2</h2>
-      <p>Gain experience through internships or volunteer opportunities.</p>
-      <ul>
-        <li>Apply for front-end internships at tech companies.</li>
-        <li>Network with local businesses or non-profits for freelance projects.</li>
-        <li>Seek mentor feedback on completed projects.</li>
-      </ul>
-    </div>
+<div class="main-content">
+  <h1>My Professional Development Plan</h1>
+  <p>Today's Date: December 2024</p>
+  
+  <div class="document-section">
+    <h2>Long Term Goal</h2>
+    <p>Work as a front-end developer at a tech company specializing in user-focused web applications.</p>
+    <p><strong>Target Achievement: October 2027</strong></p>
   </div>
 
-  <footer>
-    <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved.</p>
-  </footer>
+  <div class="document-section">
+    <h2>Short Term Goal 1</h2>
+    <p>Develop expertise in front-end technologies such as HTML, CSS, JavaScript, and frameworks like React.</p>
+    <ul>
+      <li>Enroll in advanced online courses (React, TypeScript, responsive design).</li>
+      <li>Create three web projects showcasing interactive UI/UX designs.</li>
+      <li>Contribute to open-source projects to improve skills.</li>
+    </ul>
+    <p><strong>Target Completion: March 2025</strong></p>
+  </div>
+
+  <div class="document-section">
+    <h2>Short Term Goal 2</h2>
+    <p>Gain experience through internships or volunteer opportunities.</p>
+    <ul>
+      <li>Apply for front-end internships at tech companies.</li>
+      <li>Network with local businesses or non-profits for freelance projects.</li>
+      <li>Seek mentor feedback on completed projects.</li>
+    </ul>
+    <p><strong>Target Completion: july 2025</strong></p>
+  </div>
+
+  <div class="document-section">
+    <h2>Short Term Goal 3</h2>
+    <p>Improve proficiency in front-end development tools and version control.</p>
+    <ul>
+      <li>Learn Git and GitHub for version control.</li>
+      <li>Work with tools like Webpack, Babel, and NPM.</li>
+      <li>Collaborate on group projects to understand version control workflows.</li>
+    </ul>
+    <p><strong>Target Completion: December 2025</strong></p>
+  </div>
+
+  <div class="document-section">
+    <h2>Short Term Goal 4</h2>
+    <p>Develop a strong portfolio to showcase my projects and skills.</p>
+    <ul>
+      <li>Create a personal website showcasing completed projects.</li>
+      <li>Develop detailed project case studies for each project.</li>
+      <li>Optimize portfolio for accessibility and performance.</li>
+    </ul>
+    <p><strong>Target Completion: June 2026<strong></strong></p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved.</p>
+</footer>
 </body>
 </html>

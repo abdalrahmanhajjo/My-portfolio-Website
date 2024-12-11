@@ -12,62 +12,147 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
       color: #333;
-      background: #f9f9f9;
+      background: linear-gradient(135deg, #f9f9f9 50%, #e1e8f0 50%);
+      scroll-behavior: smooth;
     }
 
+   
     a {
       text-decoration: none;
       color: inherit;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     a:hover {
       color: #ff6b6b;
+      transform: scale(1.1);
     }
 
     /* Header */
     header {
-      background: #6c63ff;
+      background: linear-gradient(135deg, #6c63ff, #4f4ccd);
       color: white;
-      padding: 10px 20px;
+      padding: 15px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header .container {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+      border-radius: 0 0 15px 15px;
+    }
+
+    header.scrolled {
+      background: rgba(108, 99, 255, 0.9);
     }
 
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 600;
-      margin: 0;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      z-index: 1500;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background: white;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      flex-wrap: wrap;
+      list-style: none;
       margin: 0;
       padding: 0;
     }
 
     nav ul li {
-      margin: 0 10px;
+      margin: 0 15px;
     }
 
     nav ul li a {
       color: white;
       font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* Responsive Navigation */
+    .hamburger {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .nav-menu {
+      display: flex;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 250px;
+        background: #6c63ff;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      nav ul li a {
+        width: 100%;
+      }
     }
 
     /* Hero Section */
@@ -76,47 +161,49 @@
       background: linear-gradient(to right, #6c63ff, #f79d00);
       color: white;
       padding: 80px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .hero h2 {
       font-size: 2.5rem;
-      margin: 10px 0;
+      margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 1rem;
-      margin: 15px 0;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
 
     .hero button {
       background: #ff6b6b;
       color: white;
+      padding: 12px 24px;
       border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
       border-radius: 8px;
+      font-size: 1rem;
       transition: background 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
     }
 
     .hero button:hover {
       background: #d9534f;
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
-    .hero button a {
-      color: white;
-      text-decoration: none;
-    }
-
-    /* Profile Section */
-    .profile-container {
-      max-width: 90%;
-      margin: 20px auto;
+    /* Section Styling */
+    .profile-container, .skills, .testimonials {
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
       padding: 20px;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .profile-container:hover, .skills:hover, .testimonials:hover {
+      transform: translateY(-10px);
     }
 
     .profile {
@@ -124,56 +211,64 @@
     }
 
     .profile img {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 3px solid #ddd;
-      cursor: pointer;
-      transition: transform 0.3s ease;
+      border: 3px solid #6c63ff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .profile img:hover {
       transform: scale(1.1);
-    }
-
-    .profile h1 {
-      margin: 10px 0;
-      font-size: 1.5rem;
-      color: #333;
-    }
-
-    .profile p {
-      font-size: 0.9rem;
-      color: #555;
-      margin: 5px 0;
+      box-shadow: 0 6px 10px rgba(108, 99, 255, 0.5);
     }
 
     .contact-info {
-      margin: 10px 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      font-size: 0.9rem;
-      color: #666;
+      margin-top: 10px;
+    }
+
+    .contact-info span {
+      display: block;
+      margin: 5px 0;
+      font-size: 1rem;
     }
 
     .section-title {
-      background-color: #ccc;
+      background-color: #6c63ff;
+      color: white;
       padding: 10px;
       text-align: center;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 1rem;
-      margin: 20px 0 10px;
     }
 
     .section-content {
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 1.1rem;
       color: #333;
-      padding: 10px;
-      background: #f9f9f9;
-      border-radius: 5px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .skills .skill {
+      text-align: center;
+    }
+
+    .skills .skill img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .skills .skill p {
+      margin-top: 8px;
+      font-weight: 500;
     }
 
     /* Footer */
@@ -182,103 +277,58 @@
       color: white;
       padding: 10px 0;
       text-align: center;
+      border-radius: 15px 15px 0 0;
+      margin-top: 20px;
     }
 
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 0.9rem;
-      }
-
-      .hero button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-      }
-
-      .contact-info span {
-        font-size: 0.8rem;
-      }
-
-      header h1 {
-        font-size: 1.2rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-
-      .hero p {
-        font-size: 0.8rem;
-      }
-
-      .profile img {
-        width: 80px;
-        height: 80px;
-      }
-
-      .profile h1 {
-        font-size: 1.2rem;
-      }
+    footer a {
+      color: #6c63ff;
+      text-decoration: underline;
     }
   </style>
   <script>
-    function enlargeImage() {
-      const img = document.getElementById("profile-img");
-      const modal = document.createElement("div");
-      modal.style.position = "fixed";
-      modal.style.top = "0";
-      modal.style.left = "0";
-      modal.style.width = "100%";
-      modal.style.height = "100%";
-      modal.style.backgroundColor = "rgba(0,0,0,0.7)";
-      modal.style.display = "flex";
-      modal.style.justifyContent = "center";
-      modal.style.alignItems = "center";
-      modal.innerHTML = `<img src="${img.src}" style="max-width: 90%; max-height: 90%; border-radius: 10px;" />`;
-      modal.onclick = function() {
-        modal.remove();
-      };
-      document.body.appendChild(modal);
+    window.onscroll = function () {
+      const header = document.querySelector('header');
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    function toggleMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      navMenu.classList.toggle('active');
     }
   </script>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="Untitled-1.html">Home</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="Reflection.html">Reflection</a></li>
-          <li><a href="Assignments.html">Assignments</a></li>
-        </ul>
-      </nav>
+    <h1>My Portfolio</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="Untitled-1.html">Home</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="Reflection.html">Reflection</a></li>
+        <li><a href="Assignments.html">Assignments</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div class="hero">
     <h2>Hi, I'm Abdalrahman</h2>
     <p>Web Developer | UI/UX Enthusiast | Problem Solver</p>
-    <button> <a href="cv.html">View CV</a></button>
+    <button onclick="window.location.href='cv.html'">View CV</button>
   </div>
 
-  <!-- Profile Section -->
   <div class="profile-container">
     <div class="profile">
-      <img id="profile-img" src="https://i.ibb.co/FHS1BLk/9-EF31473-730-D-427-C-A5-C0-72599849-A8-A8.jpg" alt="Profile Image" onclick="enlargeImage()">
+      <img id="profile-img" src="https://i.ibb.co/FHS1BLk/9-EF31473-730-D-427-C-A5-C0-72599849-A8-A8.jpg" alt="Profile Image">
       <h1>Abdalrahman Hajjo</h1>
       <p>Program of Study: Bachelor's in Computer Science</p>
       <div class="contact-info">
@@ -287,17 +337,43 @@
         <span>✉️ <a href="mailto:Abedhajjo57@gmail.com">Abedhajjo57@gmail.com</a></span>
       </div>
     </div>
-    <div class="section">
-      <div class="section-title">About Me</div>
-      <div class="section-content">
-        Motivated Computer Science undergraduate with a solid foundation in programming and software development. Proficient in Java, C++, JavaScript, HTML, CSS, and SQL, with hands-on experience in web and app development. Strong problem-solving skills, a passion for innovation, and a commitment to contributing to dynamic, team-oriented environments.
+  </div>
+
+  <div class="profile-container">
+    <div class="section-title">About Me</div>
+    <div class="section-content">
+      Motivated Computer Science undergraduate with a solid foundation in programming and software development. Proficient in Java, C++, JavaScript, HTML, CSS, and SQL, with hands-on experience in web and app development. Strong problem-solving skills, a passion for innovation, and a commitment to contributing to dynamic, team-oriented environments.
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <div class="section-title">Skills</div>
+    <div class="skills">
+      <div class="skill">
+        <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
+        <p>HTML</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+        <p>CSS</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java">
+        <p>Java</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL">
+        <p>SQL</p>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved.</p>
+    <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved. </p>
   </footer>
 </body>
 </html>

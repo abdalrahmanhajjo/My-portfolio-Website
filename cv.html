@@ -1,261 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curriculum Vitae of Abdalrahman Ahmad Hajjo">
-  <title>CV | Abdalrahman Ahmad Hajjo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum Vitae of Abdalrahman Ahmad Hajjo">
+    <title>CV | Abdalrahman Ahmad Hajjo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f9 50%, #e1e8f0 50%);
+            color: #333;
+            overflow-x: hidden;
+        }
 
-    header {
-      background-color: #6c63ff;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+        a:hover {
+            color: #ff6b6b;
+            transform: scale(1.1);
+        }
 
-    header p {
-      margin: 5px 0;
-      font-size: 1rem;
-    }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6c63ff, #4f4ccd);
+            color: white;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+            border-radius: 0 0 15px 15px;
+        }
 
-    /* Navigation */
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
+        header.scrolled {
+            background: rgba(108, 99, 255, 0.9);
+        }
 
-    nav ul li {
-      margin: 0 10px;
-    }
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
 
-    nav ul li a {
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        nav {
+            position: relative;
+        }
 
-    nav ul li a:hover {
-      color: #ff6b6b;
-    }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1500;
+        }
 
-    /* Container */
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
 
-    h2 {
-      color: #6c63ff;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
 
-    section {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    section h3 {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
+        nav ul li {
+            margin: 0 15px;
+        }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
 
-    ul li {
-      margin: 10px 0;
-      line-height: 1.5;
-    }
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
 
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background: #333;
-      color: white;
-    }
+        /* Responsive Navigation */
+        .hamburger {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
+        .nav-menu {
+            display: flex;
+        }
 
-      header p {
-        font-size: 0.9rem;
-      }
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
 
-      .container {
-        padding: 0 15px;
-      }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                right: 0;
+                top: 60px;
+                width: 250px;
+                background: #6c63ff;
+                border-radius: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
 
-      section {
-        padding: 15px;
-      }
+            .nav-menu.active {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-      h2 {
-        font-size: 1.3rem;
-      }
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
 
-      section h3 {
-        font-size: 1.1rem;
-      }
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
 
-      nav ul li {
-        margin: 0 8px;
-      }
+            nav ul li a {
+                width: 100%;
+            }
+        }
 
-      ul li {
-        font-size: 0.95rem;
-      }
-    }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
+        .cover-letter {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-      header p {
-        font-size: 0.8rem;
-      }
+        .cover-letter:hover {
+            transform: translateY(-10px);
+        }
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+        .cover-letter h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #6c63ff;
+        }
 
-      nav ul li {
-        margin: 5px 0;
-      }
+        .cover-letter a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 18px;
+            background-color: #6c63ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
 
-      h2 {
-        font-size: 1.2rem;
-      }
+        .cover-letter a:hover {
+            background-color: #4f4ccd;
+        }
 
-      ul li {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .cover-letter h2 {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <script>
+        window.onscroll = function () {
+            const header = document.querySelector('header');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </head>
+
 <body>
-  <header>
+    <header>
+        <h1>My Portfolio</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="Untitled-1.html">Home</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="Reflection.html">Reflection</a></li>
+                <li><a href="Assignments.html">Assignments</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-      <h1>My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="Untitled-1.html">Home</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="Reflection.html">Reflection</a></li>
-          <li><a href="Assignments.html">Assignments</a></li>
-        </ul>
-      </nav>
+        <h1>CV Section</h1>
+
+        <section>
+            <h2>Abdalrahman Ahmad Hajjo</h2>
+            <p>Lebanon, North, Tripoli | abedhajjo57@gmail.com | 76536462</p>
+        </section>
+
+        <!-- Professional Summary -->
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Motivated Computer Science undergraduate with a solid foundation in programming and software development.
+                Proficient in Java, C++, JavaScript, HTML, CSS, and SQL, with hands-on experience in web and app development.
+                Strong problem-solving skills, a passion for innovation, and a commitment to contributing to dynamic, team-oriented
+                environments.</p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section>
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Java, C++, JavaScript, HTML, CSS</li>
+                <li><strong>Databases:</strong> MySQL, SQL</li>
+                <li><strong>Tools:</strong> Google Workspace, Microsoft Office</li>
+                <li><strong>Web & App Development:</strong> Front-end and back-end expertise</li>
+            </ul>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+            <h2>Professional Experience</h2>
+            <h3>Web Development Assistant</h3>
+            <p><strong>Al Mobader – Baddawi, Lebanon | June 2022 – October 2022</strong></p>
+            <ul>
+                <li>Delivered web development training to students aged 15-20.</li>
+                <li>Led the development of multiple student-driven website projects.</li>
+            </ul>
+
+            <h3>App Development Assistant</h3>
+            <p><strong>Al Mobader – Baddawi, Lebanon | February 2022 – June 2022</strong></p>
+            <ul>
+                <li>Supported teaching app development based on the MIT curriculum.</li>
+                <li>Assisted in the design and creation of functional app prototypes.</li>
+            </ul>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <p><strong>Bachelor's Degree in Computer Science</strong></p>
+            <p>Beirut Arab University – Beirut, Lebanon | <strong>Expected Graduation: 2026</strong></p>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Projects</h2>
+            <h3>Flask E-commerce Website</h3>
+            <ul>
+                <li>Designed and developed a platform for buying and selling new and second-hand items within local communities.</li>
+                <li>Built the complete solution independently using Flask.</li>
+            </ul>
+        </section>
+
+        <!-- Languages -->
+        <section>
+            <h2>Languages</h2>
+            <ul>
+                <li><strong>Arabic:</strong> Native</li>
+                <li><strong>English:</strong> Proficient</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Download</h1>
+            <a href="https://baudom-my.sharepoint.com/:w:/g/personal/aah276_student_bau_edu_lb/ERcEi8G4aERIgOrV9udYFcsBTU4IWMaKgfrBFk7jeo3-gA?e=Ue6d1C">Click</a>
+        </section>
     </div>
-  </header>
 
-  <div class="container">
-    <h1>CV Section</h1>
-
-    <section>
-      <h2>Abdalrahman Ahmad Hajjo</h2>
-      <p>Lebanon, North, Tripoli | abedhajjo57@gmail.com | 76536462</p>
-    </section>
-
-    <!-- Professional Summary -->
-    <section>
-      <h2>Professional Summary</h2>
-      <p>Motivated Computer Science undergraduate with a solid foundation in programming and software development. Proficient in Java, C++, JavaScript, HTML, CSS, and SQL, with hands-on experience in web and app development. Strong problem-solving skills, a passion for innovation, and a commitment to contributing to dynamic, team-oriented environments.</p>
-    </section>
-
-    <!-- Technical Skills -->
-    <section>
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Programming Languages:</strong> Java, C++, JavaScript, HTML, CSS</li>
-        <li><strong>Databases:</strong> MySQL, SQL</li>
-        <li><strong>Tools:</strong> Google Workspace, Microsoft Office</li>
-        <li><strong>Web & App Development:</strong> Front-end and back-end expertise</li>
-      </ul>
-    </section>
-
-    <!-- Professional Experience -->
-    <section>
-      <h2>Professional Experience</h2>
-      <h3>Web Development Assistant</h3>
-      <p><strong>Al Mobader – Baddawi, Lebanon | June 2022 – October 2022</strong></p>
-      <ul>
-        <li>Delivered web development training to students aged 15-20.</li>
-        <li>Led the development of multiple student-driven website projects.</li>
-      </ul>
-
-      <h3>App Development Assistant</h3>
-      <p><strong>Al Mobader – Baddawi, Lebanon | February 2022 – June 2022</strong></p>
-      <ul>
-        <li>Supported teaching app development based on the MIT curriculum.</li>
-        <li>Assisted in the design and creation of functional app prototypes.</li>
-      </ul>
-    </section>
-
-    <!-- Education -->
-    <section>
-      <h2>Education</h2>
-      <p><strong>Bachelor's Degree in Computer Science</strong></p>
-      <p>Beirut Arab University – Beirut, Lebanon | <strong>Expected Graduation: 2026</strong></p>
-    </section>
-
-    <!-- Projects -->
-    <section>
-      <h2>Projects</h2>
-      <h3>Flask E-commerce Website</h3>
-      <ul>
-        <li>Designed and developed a platform for buying and selling new and second-hand items within local communities.</li>
-        <li>Built the complete solution independently using Flask.</li>
-      </ul>
-    </section>
-
-    <!-- Languages -->
-    <section>
-      <h2>Languages</h2>
-      <ul>
-        <li><strong>Arabic:</strong> Native</li>
-        <li><strong>English:</strong> Proficient</li>
-      </ul>
-    </section>
-    <section>
-        <h1>Download</h1>
-        <a href="https://baudom-my.sharepoint.com/:w:/g/personal/aah276_student_bau_edu_lb/ERcEi8G4aERIgOrV9udYFcsBTU4IWMaKgfrBFk7jeo3-gA?e=Ue6d1C">Click</a>
-    </section>
-</div>
-
-<footer>
-  <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Abdalrahman Ahmad Hajjo. All rights reserved.</p>
+    </footer>
 
 </body>
+
 </html>
