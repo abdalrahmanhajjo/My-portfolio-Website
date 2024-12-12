@@ -27,130 +27,134 @@
       color: #ff6b6b;
     }
 
-    /* Header */
-    header {
-      background: #6c63ff;
-      color: white;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background 0.3s ease;
-    }
+    /* Updated Header */
+header {
+  background: linear-gradient(135deg, #6c63ff, #4f4ccd);
+  color: white;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  border-radius: 0 0 15px 15px;
+}
 
-    header.scrolled {
-      background: rgba(108, 99, 255, 0.9);
-    }
+header.scrolled {
+  background: rgba(108, 99, 255, 0.9);
+}
 
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
 
-    nav {
-      position: relative;
-    }
+nav {
+  position: relative;
+}
 
-    .hamburger {
-      display: none;
-      cursor: pointer;
-      z-index: 1500;
-    }
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1500;
+}
 
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 5px 0;
-      transition: 0.3s;
-    }
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
 
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    nav ul li {
-      margin: 0 10px;
-    }
+nav ul li {
+  margin: 0 15px;
+}
 
-    nav ul li a {
-      color: white;
-      font-weight: 500;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
+nav ul li a {
+  color: white;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
 
-    nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
 
-    /* Responsive Navigation */
-    .hamburger {
-      display: none;
-      position: absolute;
-      right: 20px;
-      top: 15px;
-    }
+/* Responsive Navigation */
+.hamburger {
+  display: none;
+}
 
-    .nav-menu {
-      display: flex;
-    }
+.nav-menu {
+  display: flex;
+}
 
-    @media screen and (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        top: 60px;
-        width: 200px;
-        background: #6c63ff;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 250px;
+    background: #6c63ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 
-      .nav-menu.active {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-      }
+  .nav-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-      nav ul {
-        flex-direction: column;
-        padding: 0;
-      }
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
 
-      nav ul li {
-        margin: 10px 0;
-        text-align: center;
-      }
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
 
-      nav ul li a {
-        width: 100%;
-      }
-    }
+  nav ul li a {
+    width: 100%;
+  }
+}
+
+
     /* Main Content */
     .main-content {
       padding: 40px 15px;

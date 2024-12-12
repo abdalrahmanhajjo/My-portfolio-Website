@@ -28,7 +28,7 @@
       transform: scale(1.1);
     }
 
-    /* Header */
+    /* Updated Header */
     header {
       background: linear-gradient(135deg, #6c63ff, #4f4ccd);
       color: white;
@@ -59,6 +59,10 @@
 
     .hamburger {
       display: none;
+      position: absolute;
+      right: 50px;
+      top: 50%;
+      transform: translateY(-50%);
       cursor: pointer;
       z-index: 1500;
     }
@@ -102,12 +106,17 @@
     }
 
     /* Responsive Navigation */
+    .hamburger {
+      display: none;
+    }
+
+    .nav-menu {
+      display: flex;
+    }
+
     @media screen and (max-width: 768px) {
       .hamburger {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
       }
 
       .nav-menu {
@@ -182,6 +191,19 @@
       color: #333;
       margin-bottom: 15px;
       line-height: 1.7;
+    }
+
+    /* Skill Links Style */
+    .document-section a {
+      display: block; /* Make link a block element */
+      text-align: center; /* Center the text */
+      color: rgba(108, 99, 255, 0.9); /* Set color to purple */
+      margin-top: 10px; /* Add some space above the link */
+      transition: color 0.3s ease;
+    }
+
+    .document-section a:hover {
+      color: #ff6b6b; /* Change color on hover */
     }
 
     /* Skills Section */
